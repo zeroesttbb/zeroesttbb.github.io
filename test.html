@@ -82,15 +82,7 @@ input[type="submit"]:focus {
                                                                                                                     
                                                                                                                     
            <script type="text/javascript">
-      function getRadioButtonValue(rbutton)
-      {
-        for (var i = 0; i < rbutton.length; ++i)
-        { 
-          if (rbutton[i].checked)
-            return rbutton[i].value;
-        }
-        return null;
-      }
+ 
       function handleClick(event)
       {
         var ctaData;
@@ -123,13 +115,13 @@ h.appendChild(s);
                    <br>
                                                                                                                       <br>
                                                                                                                       <br>
-       <form name="myform" onSubmit="JavaScript:handleClick()">
+       <form name="myform1" onSubmit="JavaScript:handleClick()">
     <input type="submit" value="Mạng Mobifone bấm vào đây" onClick="JavaScript:handleClick()"/>
 </form>
           <br>                                    
              <br>                                
-           <form name="myform" onSubmit="JavaScript:handle2Click()">
-    <input type="submit" value="Mạng Vinafone bấm vào đây" onClick="JavaScript:handleClick()"/>
+           <form name="myform2" onSubmit="JavaScript:handle2Click()">
+    <input type="submit" value="Mạng Vinafone bấm vào đây" onClick="JavaScript:handle2Click()"/>
 </form>
 </form>
   
