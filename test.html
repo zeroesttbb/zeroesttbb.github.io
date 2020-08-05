@@ -91,7 +91,6 @@ input[type="submit"]:focus {
         }
         return null;
       }
-
       function handleClick(event)
       {
         var ctaData;
@@ -124,13 +123,14 @@ h.appendChild(s);
                    <br>
                                                                                                                       <br>
                                                                                                                       <br>
-        <form action="JavaScript:handleClick()">
-    <input type="submit" value="Mạng Mobifone bấm vào đây" />
+       <form name="myform" onSubmit="JavaScript:handleClick()">
+    <input type="submit" value="Mạng Mobifone bấm vào đây" onClick="JavaScript:handleClick()"/>
 </form>
           <br>                                    
              <br>                                
-            <form action="JavaScript:handleClick2()">
-    <input type="submit" value="Mạng Vinafone bấm vào đây" />
+           <form name="myform" onSubmit="JavaScript:handle2Click()">
+    <input type="submit" value="Mạng Vinafone bấm vào đây" onClick="JavaScript:handleClick()"/>
+</form>
 </form>
   
             </section>
