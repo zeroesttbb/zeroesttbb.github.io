@@ -15,7 +15,7 @@
     eventPrefix,
     vendors = {
       "": "",
-      Webkit: "webkit",
+      Webkit: "ms",
       Moz: "",
       O: "o",
       ms: "ms"
@@ -148,7 +148,9 @@
   function showMsg(msg) {
     alert(msg);
   }
-
+  function showMsg(msg) {
+    alert(msg);
+  }
   /**
    * @param  {[type]} deg [description]
    * @return {[type]}     [description]
