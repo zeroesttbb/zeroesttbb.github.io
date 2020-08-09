@@ -79,13 +79,6 @@
               callback && callback([rand, chances]);
             },
             gotBack: function(data) {
-              if (data == 'Bạn đã trúng thưởng Iphone XS Pro Max'){
-                Swal.fire(
-                  'Bạn không trúng thưởng',
-                  data,
-                  'error'
-                )
-              } else{
                 Swal.fire(
                   'Đã trúng giải',
                   data,
