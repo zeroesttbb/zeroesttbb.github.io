@@ -10,7 +10,7 @@
       .hc-luckywheel{
         position:fixed;
         top: 80%;
-        left: 50%;
+        left: 45%;
         margin-top: -250px;
         margin-left: -250px;
       }
@@ -94,10 +94,29 @@
               } else{
                 Swal.fire(
                   'Chúc mừng bạn đã trúng giải',
-                  data,'Vui lòng gửi tin nhắn về tổng đài để hoàn tất thủ tục nhận giải'               
+                  data,             
                   'success'
                   
 ,                 )
+                  } else{
+                    Swal.fire({
+  title: '<strong>HTML <u>example</u></strong>',
+  icon: 'info',
+  html:
+    'You can use <b>bold text</b>, ' +
+    '<a href="//sweetalert2.github.io">links</a> ' +
+    'and other HTML tags',
+  showCloseButton: true,
+  showCancelButton: true,
+  focusConfirm: false,
+  confirmButtonText:
+    '<i class="fa fa-thumbs-up"></i> Great!',
+  confirmButtonAriaLabel: 'Thumbs up, great!',
+  cancelButtonText:
+    '<i class="fa fa-thumbs-down"></i>',
+  cancelButtonAriaLabel: 'Thumbs down'
+})
+                  }
               }
             }
           });
