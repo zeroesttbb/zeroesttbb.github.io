@@ -117,7 +117,7 @@
   border-bottom-color: #b07a7b;
 }
 
-body{ margin:0; padding:0; height:50%; width:50%; }
+body{ margin:0; padding:0; height:100%; width:50%; }
 
 .bg {
   background-image: url('bg.png');
