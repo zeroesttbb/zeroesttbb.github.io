@@ -7,8 +7,8 @@
 
 .hc-luckywheel {
   position: relative;
-  width: 200px; /*Change this when change size*/
-  height: 200px; /*Change this when change size*/
+  width: 20px; /*Change this when change size*/
+  height: 20px; /*Change this when change size*/
   border-radius: 50%;
   border: 16px solid #e44025;
   box-shadow: 0 2px 3px #333, 0 0 2px #000;
@@ -61,8 +61,8 @@
   /* width: 50px; */
   margin: 0 auto;
   text-align: center;
- -ms-transform-origin: 50% 250px; /*Change this when change size*/
-  transform-origin: 50% 250px;
+ -ms-transform-origin: 20% 250px; /*Change this when change size*/
+  transform-origin: 20% 250px;
 } /*Change this when change size*/
 
 .hc-luckywheel-item img {
