@@ -61,8 +61,8 @@
   /* width: 50px; */
   margin: 0 auto;
   text-align: center;
- -ms-transform-origin: 20% 250px; /*Change this when change size*/
-  transform-origin: 20% 250px;
+ -ms-transform-origin: 20% 20px; /*Change this when change size*/
+  transform-origin: 20% 20px;
 } /*Change this when change size*/
 
 .hc-luckywheel-item img {
