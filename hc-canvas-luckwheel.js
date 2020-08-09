@@ -148,9 +148,6 @@
   function showMsg(msg) {
     alert(msg);
   }
-  function showMsg(msg) {
-    alert(msg);
-  }
   /**
    * @param  {[type]} deg [description]
    * @return {[type]}     [description]
@@ -191,7 +188,7 @@
       return fnGotBack(null);
     } else {
       removeClass(btn, "disabled");
-      return fnGotBack(prizes[optsPrize.prizeId].text);
+      return fnGotBack(prizes[optsPrize.prizeId].text.text);
     }
   }
 
