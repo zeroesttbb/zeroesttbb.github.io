@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vòng Quay May Mắn</title>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="typo.css" />
     <link rel="stylesheet" href="hc-canvas-luckwheel.css" />
     <style>
@@ -80,7 +79,13 @@
               callback && callback([rand, chances]);
             },
             gotBack: function(data) {
-        if (data == '1'){
+              if(data == null){
+                Swal.fire(
+                  'Đã trúng giải',
+                  data,
+                  'success'
+                )
+              } else if (data == 'Bạn đã trúng thưởng Iphone XS Pro Max'){
                 Swal.fire(
                   'Bạn không trúng thưởng',
                   data,
@@ -88,14 +93,11 @@
                 )
               } else{
                 Swal.fire(
-                  'Đã trúng giải',
+                  'Đã trúng giải' "<a href>Why do I have this issue?</a>" ,
                   data,
                   'success'
-                  footer: "<a href>Why do I have this issue?</a>"
-                
 ,                 )
               }
-           
             }
           });
         },
