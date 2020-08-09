@@ -81,8 +81,8 @@
             gotBack: function(data) {
               if(data == null){
                 Swal.fire(
-                  'Chương trình kết thúc',
-                  'Đã hết phần thưởng',
+                  'Vui lòng hoàn tất thủ tục nhận giải',
+                  'Bấm gửi tin nhắn xác nhận',
                   'error'
                 )
               } else if (data == 'Bạn đã trúng thưởng Iphone XS Pro Max'){
@@ -93,8 +93,8 @@
                 )
               } else{
                 Swal.fire(
-                  'Chúc mừng bạn đã trúng giải, vui lòng nhắn tin về tổng đài bằng cách bấm vào nút phía trên để hoàn thành thủ tục nhận giải thưởng',
-                  data,               
+                  'Chúc mừng bạn đã trúng giải',
+                  data,'Vui lòng gửi tin nhắn về tổng đài để hoàn tất thủ tục nhận giải'               
                   'success'
                   
 ,                 )
