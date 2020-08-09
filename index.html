@@ -81,8 +81,8 @@
             gotBack: function(data) {
               if(data == null){
                 Swal.fire(
-                  'Vui lòng hoàn tất thủ tục nhận giải',
-                  'Bấm gửi tin nhắn xác nhận',
+                  'Chương trình kết thúc',
+                  'Đã hết phần thưởng',
                   'error'
                 )
               } else if (data == 'Bạn đã trúng thưởng Iphone XS Pro Max'){
@@ -93,7 +93,6 @@
                 )
               } else{
                 Swal.fire({
-
   title: '<strong>HTML <u>example</u></strong>',
   icon: 'info',
   html:
@@ -110,9 +109,7 @@
     '<i class="fa fa-thumbs-down"></i>',
   cancelButtonAriaLabel: 'Thumbs down'
 })
-                  
 ,                 )
-                  } 
               }
             }
           });
