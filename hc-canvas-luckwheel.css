@@ -19,8 +19,8 @@
   left: 0;
   top: 0;
   z-index: 1;
-  width: 100px;
-  height: 100px
+  width: inherit;
+  height: inherit;
   border-radius: inherit;
   background-clip: padding-box;
   background-color: #ffcb3f;
@@ -29,8 +29,8 @@
 }
 
 .hc-luckywheel-container canvas {
-  width: 100px
-  height: 100px
+  width: inherit;
+  height: inherit;
   border-radius: 50%;
 }
 
@@ -38,8 +38,8 @@
   position: absolute;
   left: 0;
   top: 0;
-  width: 100px
-  height: 100px
+  width: inherit;
+  height: inherit;
   z-index: 2;
 }
 
@@ -47,8 +47,8 @@
   position: absolute;
   left: 0;
   top: 0;
-  width: 50
-  height: 50
+  width: 100%;
+  height: 100%;
   color: #e4370e;
   font-weight: bold;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6);
@@ -61,23 +61,23 @@
   /* width: 50px; */
   margin: 0 auto;
   text-align: center;
-  -webkit-transform-origin: 50% 250px; /*Change this when change size*/
-  -ms-transform-origin: 50% 250px; /*Change this when change size*/
-  transform-origin: 20% 250px;
+  -webkit-transform-origin: 4% 50px; /*Change this when change size*/
+  -ms-transform-origin: 4% 50px; /*Change this when change size*/
+  transform-origin: 4% 50px;
 } /*Change this when change size*/
 
 .hc-luckywheel-item img {
   position: relative;
   top: -20px;
   left: 0px;
-  width: 100px; /*Change this when change size*/
-  height: 100px;
+  width: 20px; /*Change this when change size*/
+  height: 20px;
 } /*Change this when change size*/
 
 .hc-luckywheel-btn {
   position: absolute;
-  left: 210px; /*Change this when change size*/
-  top: 210px; /*Change this when change size*/
+  left: 30px; /*Change this when change size*/
+  top: 30px; /*Change this when change size*/
   z-index: 3;
   width: 80px;
   height: 80px;
@@ -120,5 +120,5 @@
 body{ margin:0; padding:0; height:100vh; width:100%; }
 
 .bg {
-  background-image: url('../images/bg.png');
+  background-image: url('bg.png');
 }
