@@ -9,8 +9,8 @@
     <style>
       .hc-luckywheel{
         position:fixed;
-        top: 80%;
-        left: 45%;
+        top: 50%;
+        left: 50%;
         margin-top: -250px;
         margin-left: -250px;
       }
@@ -79,16 +79,13 @@
               callback && callback([rand, chances]);
             },
             gotBack: function(data) {
+          
                 Swal.fire(
                   'Đã trúng giải',
                   data,
                   'success'
 ,                 )
-              
-            
-          });
         },
-        false
       );
       function randomIndex(prizes){
         if(isPercentage){
