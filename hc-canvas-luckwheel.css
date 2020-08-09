@@ -1,6 +1,6 @@
 .hc-luckywheel ul,
 .hc-luckywheel li {
-  margin-top: 200px;
+  margin: 0;
   padding: 0;
   list-style: none;
 }
@@ -61,7 +61,7 @@
   /* width: 50px; */
   margin: 0 auto;
   text-align: center;
-
+  -webkit-transform-origin: 50% 250px; /*Change this when change size*/
   -ms-transform-origin: 50% 250px; /*Change this when change size*/
   transform-origin: 50% 250px;
 } /*Change this when change size*/
@@ -120,5 +120,5 @@
 body{ margin:0; padding:0; height:100vh; width:100%; }
 
 .bg {
-  background-image: url('../images/bg.png');
+  background-image: url('bg.png');
 }
