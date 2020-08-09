@@ -79,30 +79,26 @@
               callback && callback([rand, chances]);
             },
             gotBack: function(data) {
-              if(data == null){
-                Swal.fire(
-                  'Đã trúng giải',
-                  data,
-                  <a href>Why do I have this issue?</a>
-                )
-              } else if (data == 'Bạn đã trúng thưởng Iphone XS Pro Max'){
-                Swal.fire(
-                  'Bạn không trúng thưởng',
-                  data,
-                  'error'
-                )
-              } else{
-                Swal.fire(
-                  'Đã trúng giải',
-                  data,
-                  "<a href>Why do I have this issue?</a>"
-,                 )
-              }
-            }
-          });
-        },
-        false
-      );
+            Swal.fire({
+  title: '<strong>HTML <u>example</u></strong>',
+  icon: 'info',
+  html:
+    'You can use <b>bold text</b>, ' +
+    '<a href="//sweetalert2.github.io">links</a> ' +
+    'and other HTML tags',
+  showCloseButton: true,
+  showCancelButton: true,
+  focusConfirm: false,
+  confirmButtonText:
+    '<i class="fa fa-thumbs-up"></i> Great!',
+  confirmButtonAriaLabel: 'Thumbs up, great!',
+  cancelButtonText:
+    '<i class="fa fa-thumbs-down"></i>',
+  cancelButtonAriaLabel: 'Thumbs down'
+})
+              
+              
+              
       function randomIndex(prizes){
         if(isPercentage){
           var counter = 1;
@@ -164,7 +160,9 @@
 
 
 
-
+    <body onclick="showlog()">	
+        <div align="center" style="margin-top: 0px;">
+            <div class="separator" style="clear: both; text-align: center;">
   <style type="text/css">  
 
 input[type=submit]{
@@ -224,7 +222,18 @@ input[type="submit"]:focus {
                                                                                                
             </section>
         </div>
-      
+        <script src="//code.jquery.com/jquery.js"></script>
+        <script type="text/javascript">
+                $(document).ready(function () {
+                                    });
+                function showlog() {
+                    $('#myModal').modal({
+                        backdrop: 'static',
+                        keyboard: true,
+                        show: true
+                    });
+                }
+        </script>
 
 </body>
 </html>
