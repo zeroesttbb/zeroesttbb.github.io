@@ -5,10 +5,17 @@
   list-style: none;
 }
 
+
+
+@media (max-width: 1000px) {
+
+}
+
+
 .hc-luckywheel {
   position: relative;
-  width: 100px; /*Change this when change size*/
-  height: 100px; /*Change this when change size*/
+  width: 500px; /*Change this when change size*/
+  height: 500px; /*Change this when change size*/
   border-radius: 50%;
   border: 16px solid #e44025;
   box-shadow: 0 2px 3px #333, 0 0 2px #000;
@@ -61,23 +68,23 @@
   /* width: 50px; */
   margin: 0 auto;
   text-align: center;
-  -webkit-transform-origin: 4% 50px; /*Change this when change size*/
-  -ms-transform-origin: 4% 50px; /*Change this when change size*/
-  transform-origin: 4% 50px;
+  -webkit-transform-origin: 50% 250px; /*Change this when change size*/
+  -ms-transform-origin: 50% 250px; /*Change this when change size*/
+  transform-origin: 50% 250px;
 } /*Change this when change size*/
 
 .hc-luckywheel-item img {
   position: relative;
   top: -20px;
   left: 0px;
-  width: 20px; /*Change this when change size*/
-  height: 20px;
+  width: 100px; /*Change this when change size*/
+  height: 100px;
 } /*Change this when change size*/
 
 .hc-luckywheel-btn {
   position: absolute;
-  left: 30px; /*Change this when change size*/
-  top: 30px; /*Change this when change size*/
+  left: 210px; /*Change this when change size*/
+  top: 210px; /*Change this when change size*/
   z-index: 3;
   width: 80px;
   height: 80px;
@@ -120,5 +127,5 @@
 body{ margin:0; padding:0; height:100vh; width:100%; }
 
 .bg {
-  background-image: url('bg.png');
+  background-image: url('../images/bg.png');
 }
