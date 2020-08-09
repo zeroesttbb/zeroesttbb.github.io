@@ -9,8 +9,8 @@
     <style>
       .hc-luckywheel{
         position:fixed;
-        top: 80%;
-        left: 45%;
+        top: 50%;
+        left: 50%;
         margin-top: -250px;
         margin-left: -250px;
       }
@@ -29,7 +29,6 @@
     </div>
 </style>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
     <script src="hc-canvas-luckwheel.js"></script>
     <script>
       var isPercentage = true;
@@ -80,26 +79,30 @@
               callback && callback([rand, chances]);
             },
             gotBack: function(data) {
-            Swal.fire({
-  title: '<strong>HTML <u>example</u></strong>',
-  icon: 'info',
-  html:
-    'You can use <b>bold text</b>, ' +
-    '<a href="//sweetalert2.github.io">links</a> ' +
-    'and other HTML tags',
-  showCloseButton: true,
-  showCancelButton: true,
-  focusConfirm: false,
-  confirmButtonText:
-    '<i class="fa fa-thumbs-up"></i> Great!',
-  confirmButtonAriaLabel: 'Thumbs up, great!',
-  cancelButtonText:
-    '<i class="fa fa-thumbs-down"></i>',
-  cancelButtonAriaLabel: 'Thumbs down'
-})
-            }            
-              
-              
+              if(data == null){
+                Swal.fire(
+                  'Chương trình kết thúc',
+                  'Đã hết phần thưởng',
+                  'error'
+                )
+              } else if (data == 'Bạn đã trúng thưởng Iphone XS Pro Max'){
+                Swal.fire(
+                  'Bạn không trúng thưởng',
+                  data,
+                  'error'
+                )
+              } else{
+                Swal.fire(
+                  'Đã trúng giải',
+                  data,
+                  'success'
+,                 )
+              }
+            }
+          });
+        },
+        false
+      );
       function randomIndex(prizes){
         if(isPercentage){
           var counter = 1;
