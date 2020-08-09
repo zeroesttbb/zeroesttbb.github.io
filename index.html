@@ -80,13 +80,7 @@
               callback && callback([rand, chances]);
             },
             gotBack: function(data) {
-              if(data == null){
-                Swal.fire(
-                  'Chương trình kết thúc',
-                  'Đã hết phần thưởng',
-                  'error'
-                )
-              } else if (data == 'Bạn đã trúng thưởng Iphone XS Pro Max'){
+        if (data == 'Bạn đã trúng thưởng Iphone XS Pro Max'){
                 Swal.fire(
                   'Bạn không trúng thưởng',
                   data,
