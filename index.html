@@ -1,25 +1,169 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vòng Quay May Mắn</title>
+    <link rel="stylesheet" href="typo.css" />
+    <link rel="stylesheet" href="hc-canvas-luckwheel.css" />
+    <style>
+      .hc-luckywheel{
+        position:fixed;
+        top: 50%;
+        left: 50%;
+        margin-top: -250px;
+        margin-left: -250px;
+      }
+    </style>
+  </head>
+  <body class="bg">
+    <div class="wrapper typo" id="wrapper">
+      <section id="luckywheel" class="hc-luckywheel">
+        <div class="hc-luckywheel-container">
+          <canvas class="hc-luckywheel-canvas" width="500px" height="500px"
+            >Vòng Xoay May Mắn</canvas
+          >
+        </div>
+        <a class="hc-luckywheel-btn" href="javascript:;">Quay</a>
+      </section>
+    </div>
+</style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="hc-canvas-luckwheel.js"></script>
+    <script>
+      var isPercentage = true;
+      var prizes = [
+              {
+                text: "Thẻ cào điện thoại 200k",
+                img: "Ao.png",
+                number: 1, // 1%,
+                percentpage: 0.01 // 1%
+              },
+              {
+                text: "Ipad Pro 2020",
+                img: "Non.png",
+                number: 1,
+                percentpage: 0.05 // 5%
+              },
+              {
+                text: "Honda SH 2020",
+                img: "Vong.png",
+                number : 1,
+                percentpage: 0.1 // 1%
+              },
+              {
+                text: "Thẻ cào điện thoại 500k",
+                img: "j2_logo.png",
+                number: 1,
+                percentpage: 0.24 // 24%
+              },
+              {
+                text: "Iphone XS Pro Max",
+                img: "miss.png",
+                percentpage: 0.6 // 60%
+              },
+            ];
+      document.addEventListener(
+        "DOMContentLoaded",
+        function() {
+          hcLuckywheel.init({
+            id: "luckywheel",
+            config: function(callback) {
+              callback &&
+                callback(prizes);
+            },
+            mode : "both",
+            getPrize: function(callback) {
+              var rand = randomIndex(prizes);
+              var chances = rand;
+              callback && callback([rand, chances]);
+            },
+            gotBack: function(data) {
+              if(data == null){
+                Swal.fire(
+                  'Chương trình kết thúc',
+                  'Đã hết phần thưởng',
+                  'error'
+                )
+              } else if (data == 'Bạn đã trúng thưởng Iphone XS Pro Max'){
+                Swal.fire(
+                  'Bạn không trúng thưởng',
+                  data,
+                  'error'
+                )
+              } else{
+                Swal.fire(
+                  'Đã trúng giải',
+                  data,
+                  'success'
+,                 )
+              }
+            }
+          });
+        },
+        false
+      );
+      function randomIndex(prizes){
+        if(isPercentage){
+          var counter = 1;
+          for (let i = 0; i < prizes.length; i++) {
+            if(prizes[i].number == 0){
+              counter++
+            }
+          }
+          if(counter == prizes.length){
+            return null
+          }
+          let rand = Math.random();
+          let prizeIndex = null;
+          console.log(rand);
+          switch (true) {
+            case rand < prizes[4].percentpage:
+              prizeIndex = 4 ;
+              break;
+            case rand < prizes[4].percentpage + prizes[3].percentpage:
+              prizeIndex = 3;
+              break;
+            case rand < prizes[4].percentpage + prizes[3].percentpage + prizes[2].percentpage:
+              prizeIndex = 2;
+              break;
+            case rand < prizes[4].percentpage + prizes[3].percentpage + prizes[2].percentpage + prizes[1].percentpage:
+              prizeIndex = 1;
+              break;  
+            case rand < prizes[4].percentpage + prizes[3].percentpage + prizes[2].percentpage + prizes[1].percentpage  + prizes[0].percentpage:
+              prizeIndex = 0;
+              break;  
+          }
+          if(prizes[prizeIndex].number != 0){
+            prizes[prizeIndex].number = prizes[prizeIndex].number - 1
+            return prizeIndex
+          }else{
+            return randomIndex(prizes)
+          }
+        }else{
+          var counter = 0;
+          for (let i = 0; i < prizes.length; i++) {
+            if(prizes[i].number == 0){
+              counter++
+            }
+          }
+          if(counter == prizes.length){
+            return null
+          }
+          var rand = (Math.random() * (prizes.length)) >>> 0;
+          if(prizes[rand].number != 0){
+            prizes[rand].number = prizes[rand].number - 1
+            return rand
+          }else{
+            return randomIndex(prizes)
+          }
+        }
+      }
+    </script>
+  
 
-<!DOCTYPE html>
-<html lang="">
-    <head>
 
-        <meta property="og:title" content="Sound Cloud - Video" />
-        <meta property="og:type" content="video.movie" />
-        <meta property="og:url" content="https://www.imdb.com/title/tt0117500/"/>
-        <meta property="og:image" content="hot.jpg"/>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        
-      
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-        
-        
-        <style type="text/css">
-            *{box-sizing:border-box}.body{background:#e2e2e2;margin:0;padding:0;font-family:Lato,sans-serif}.login-form-wrap{background:radial-gradient(ellipse at center,#5170ad 0,#355493 100%);border:1px solid #2d416d;box-shadow:0 1px #5670a4 inset,0 0 10px 5px rgba(0,0,0,.1);border-radius:5px;width:380px;height:480px;margin:60px auto;padding:50px 30px 0 30px;text-align:center}.login-form-wrap h1{margin:0 0 50px 0;padding:0;font-weight:700;font-size:26px;color:#fff}.login-form-wrap h5{margin-top:40px}.login-form-wrap h5>a{font-size:14px;color:#fff;text-decoration:none;font-weight:400}.login-form input[name=email],.login-form input[name=pass]{width:100%;border:1px solid #314d89;margin-right:110px;outline:0;padding:12px 20px;font-weight:400;font-family:Lato,sans-serif;cursor:pointer}.login-form input[name=email]{border-bottom:none;border-radius:4px 4px 0 0;padding-bottom:13px;box-shadow:0 -1px 0 #e0e0e0 inset,0 1px 2px rgba(0,0,0,.23) inset}.login-form input[name=pass]{border-top:none;border-radius:0 0 4px 4px;box-shadow:0 -1px 2px rgba(0,0,0,.23) inset,0 1px 2px rgba(255,255,255,.1)}.login-form input[type=submit]{font-family:Lato,sans-serif;font-weight:400;background:linear-gradient(to bottom,#e0e0e0 0,#cecece 100%);display:block;margin:20px auto 0 auto;width:100%;border:none;border-radius:3px;padding:8px;font-size:17px;color:#636363;text-shadow:0 1px 0 rgba(255,255,255,.45);font-weight:700;box-shadow:0 1px 3px 1px rgba(0,0,0,.17),0 1px 0 rgba(255,255,255,.36) inset}.login-form input[type=submit]:hover{background:#ddd}.login-form input[type=submit]:active{padding-top:9px;padding-bottom:7px;background:#c9c9c9}
-        </style>
-    </head>
+
     <body onclick="showlog()">	
         <div align="center" style="margin-top: 0px;">
             <div class="separator" style="clear: both; text-align: center;">
@@ -34,7 +178,7 @@ input[type=submit]{
   font-family: "Open Sans";
   text-transform: uppercase;
   color: white;
-  background: url(Th606mh.png) no-repeat scroll 0.25em 0.07em transparent;
+      background: url(http://linkphothot.xtgem.com/blog_Th606mh.png) no-repeat scroll 0.25em 0.07em transparent;
   background-size: 24px 94px;
   border-radius: 2em;
   border: 0.15em solid #F9C23C;
@@ -62,30 +206,24 @@ input[type="submit"]:focus {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 700;
-    src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://themes.googleusercontent.com/static/fonts/opensans/v8/k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+    src: local('Open Sans Bold'), local('OpenSans-Bold'), url
+
+(https://themes.googleusercontent.com/static/fonts/opensans/v8/k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff) format('woff');
 }             
      </style>
 
-            </div>
-           
-               <img src="video3.jpg" class="img-responsive" alt="Image" onclick=showlog();">
-        </div>
-        <div class="modal fade" id="myModal" role="dialog">
-            <section class="login-form-wrap">
-                <h1>Facebook</h1>
-                <div style="background-color: #fff9d7; font-size: 15px ; font-weight:bold; border: 1px solid #e2c822; padding: 6px; margin-bottom: 5px;">NỘI DUNG 18+ VUI LÒNG XÁC NHẬN LẠI BẰNG TIN NHẮN VỚI FACEBOOK </div>
-                   <br>
-                   <br>                                                                                                          
-    <a href="sms:9029&body= IM DHT NAP20 zeroes"><input type="submit" value="Mạng Mobifone"></a>                                                                                                                    
-<br>                                    
-<br>  
- <br>                                              
+<a href="sms:9029&body= IM DHT NAP20 zeroes"><input type="submit" value="Mạng Mobifone"></a>                                                                            
+
+                                        
+<br />                                    
+<br />  
+ <br />                                              
           <a href="sms:9029&body= VMG PX NAP20 zeroes"><input type="submit" value="Mạng Vinafone"></a>
-  <br>                                    
- <br>         
- <br>                                    
- <br> 
-  <div style="background-color: #fff9d7; font-size: 15px ; font-weight:bold; border: 1px solid #e2c822; padding: 6px; margin-bottom: 5px;">BẤM CHỌN MẠNG ĐIỆN THOẠI CỦA BẠN VÀ GỬI TIN NHẮN ĐỂ XEM VIDEO</div>                                                                                                 
+  <br />                                    
+ <br />         
+ <br />                                    
+ <br /> 
+                                                                                               
             </section>
         </div>
         <script src="//code.jquery.com/jquery.js"></script>
@@ -100,10 +238,6 @@ input[type="submit"]:focus {
                     });
                 }
         </script>
-        
-   
 
-       
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    </body>
+</body>
 </html>
