@@ -7,8 +7,8 @@
 
 .hc-luckywheel {
   position: relative;
-  width: 500px; /*Change this when change size*/
-  height: 500px; /*Change this when change size*/
+  width: 200px; /*Change this when change size*/
+  height: 200px; /*Change this when change size*/
   border-radius: 50%;
   border: 16px solid #e44025;
   box-shadow: 0 2px 3px #333, 0 0 2px #000;
